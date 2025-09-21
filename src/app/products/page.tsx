@@ -83,7 +83,7 @@ export default function ProductsPage() {
 						<Button
 							variant="outline"
 							onClick={() => setShowFilters(!showFilters)}
-							className="lg:hidden"
+							className="lg:hidden touch-manipulation"
 						>
 							<Filter className="h-4 w-4 mr-2" />
 							Filters
@@ -119,6 +119,15 @@ export default function ProductsPage() {
 					{/* Mobile Filters */}
 					{showFilters && (
 						<div className="lg:hidden mt-4 pt-4 border-t border-gray-200">
+							<div className="flex items-center justify-between mb-4">
+								<h3 className="text-lg font-semibold text-gray-900">Filters</h3>
+								<button
+									onClick={() => setShowFilters(false)}
+									className="p-1 text-gray-400 hover:text-gray-600 touch-manipulation"
+								>
+									<X className="h-5 w-5" />
+								</button>
+							</div>
 							<div className="space-y-4">
 								<div>
 									<label className="block text-sm font-medium text-gray-700 mb-2">
@@ -127,7 +136,7 @@ export default function ProductsPage() {
 									<select
 										value={selectedCategory}
 										onChange={(e) => setSelectedCategory(e.target.value)}
-										className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+										className="w-full px-3 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-base touch-manipulation"
 									>
 										{categories.map((category) => (
 											<option key={category} value={category}>
@@ -144,7 +153,7 @@ export default function ProductsPage() {
 									<select
 										value={sortBy}
 										onChange={(e) => setSortBy(e.target.value)}
-										className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+										className="w-full px-3 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-base touch-manipulation"
 									>
 										<option value="name">Sort by Name</option>
 										<option value="price-low">Price: Low to High</option>
@@ -169,7 +178,7 @@ export default function ProductsPage() {
 
 				{/* Products Grid */}
 				{filteredProducts.length > 0 ? (
-					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
 						{filteredProducts.map((product) => (
 							<ProductCard key={product.id} product={product} />
 						))}

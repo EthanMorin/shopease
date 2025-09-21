@@ -42,7 +42,8 @@ export default function ContactPage() {
 					</p>
 				</div>
 
-				<div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+				{/* Contact Form and Contact Information - Side by Side */}
+				<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
 					{/* Contact Form */}
 					<div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
 						<h2 className="text-2xl font-bold text-gray-900 mb-6">
@@ -95,105 +96,99 @@ export default function ContactPage() {
 					</div>
 
 					{/* Contact Information */}
-					<div className="space-y-8">
-						{/* Contact Details */}
-						<div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
-							<h2 className="text-2xl font-bold text-gray-900 mb-6">
-								Get in touch
-							</h2>
-							<div className="space-y-6">
-								<div className="flex items-start">
-									<div className="bg-blue-100 p-3 rounded-lg mr-4">
-										<Mail className="h-6 w-6 text-blue-600" />
-									</div>
-									<div>
-										<h3 className="font-semibold text-gray-900 mb-1">Email</h3>
-										<p className="text-gray-600">ethan@example.com</p>
-										<p className="text-sm text-gray-500">
-											I'll get back to you soon
-										</p>
-									</div>
+					<div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
+						<h2 className="text-2xl font-bold text-gray-900 mb-6">
+							Get in touch
+						</h2>
+						<div className="space-y-6">
+							<div className="flex items-start">
+								<div className="bg-blue-100 p-3 rounded-lg mr-4">
+									<Mail className="h-6 w-6 text-blue-600" />
 								</div>
-								<div className="flex items-start">
-									<div className="bg-green-100 p-3 rounded-lg mr-4">
-										<Phone className="h-6 w-6 text-green-600" />
-									</div>
-									<div>
-										<h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
-										<p className="text-gray-600">+1 (555) 123-4567</p>
-										<p className="text-sm text-gray-500">Available most days</p>
-									</div>
+								<div>
+									<h3 className="font-semibold text-gray-900 mb-1">Email</h3>
+									<p className="text-gray-600">ethan@example.com</p>
+									<p className="text-sm text-gray-500">
+										I'll get back to you soon
+									</p>
 								</div>
-								<div className="flex items-start">
-									<div className="bg-purple-100 p-3 rounded-lg mr-4">
-										<MapPin className="h-6 w-6 text-purple-600" />
-									</div>
-									<div>
-										<h3 className="font-semibold text-gray-900 mb-1">
-											Location
-										</h3>
-										<p className="text-gray-600">
-											Remote Developer
-											<br />
-											Available worldwide
-										</p>
-									</div>
+							</div>
+							<div className="flex items-start">
+								<div className="bg-green-100 p-3 rounded-lg mr-4">
+									<Phone className="h-6 w-6 text-green-600" />
 								</div>
-								<div className="flex items-start">
-									<div className="bg-yellow-100 p-3 rounded-lg mr-4">
-										<Clock className="h-6 w-6 text-yellow-600" />
-									</div>
-									<div>
-										<h3 className="font-semibold text-gray-900 mb-1">
-											Availability
-										</h3>
-										<p className="text-gray-600">
-											Flexible schedule
-											<br />
-											Quick response time
-											<br />
-											Open to new projects
-										</p>
-									</div>
+								<div>
+									<h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
+									<p className="text-gray-600">+1 (555) 123-4567</p>
+									<p className="text-sm text-gray-500">Available most days</p>
+								</div>
+							</div>
+							<div className="flex items-start">
+								<div className="bg-purple-100 p-3 rounded-lg mr-4">
+									<MapPin className="h-6 w-6 text-purple-600" />
+								</div>
+								<div>
+									<h3 className="font-semibold text-gray-900 mb-1">Location</h3>
+									<p className="text-gray-600">
+										Remote Developer
+										<br />
+										Available worldwide
+									</p>
+								</div>
+							</div>
+							<div className="flex items-start">
+								<div className="bg-yellow-100 p-3 rounded-lg mr-4">
+									<Clock className="h-6 w-6 text-yellow-600" />
+								</div>
+								<div>
+									<h3 className="font-semibold text-gray-900 mb-1">
+										Availability
+									</h3>
+									<p className="text-gray-600">
+										Flexible schedule
+										<br />
+										Quick response time
+										<br />
+										Open to new projects
+									</p>
 								</div>
 							</div>
 						</div>
+					</div>
+				</div>
 
-						{/* FAQ */}
-						<div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
-							<h2 className="text-2xl font-bold text-gray-900 mb-6">
-								Frequently Asked Questions
-							</h2>
-							<div className="space-y-4">
-								<div>
-									<h3 className="font-semibold text-gray-900 mb-2">
-										How can I track my order?
-									</h3>
-									<p className="text-gray-600 text-sm">
-										Once your order ships, you'll receive a tracking number via
-										email. You can also track your order in your account
-										dashboard.
-									</p>
-								</div>
-								<div>
-									<h3 className="font-semibold text-gray-900 mb-2">
-										What is your return policy?
-									</h3>
-									<p className="text-gray-600 text-sm">
-										We offer a 30-day return policy for most items. Items must
-										be in original condition with tags attached.
-									</p>
-								</div>
-								<div>
-									<h3 className="font-semibold text-gray-900 mb-2">
-										Do you offer international shipping?
-									</h3>
-									<p className="text-gray-600 text-sm">
-										Currently, we ship within the United States and Canada.
-										International shipping is coming soon!
-									</p>
-								</div>
-							</div>
+				{/* FAQ Section - Full Width Below */}
+				<div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
+					<h2 className="text-2xl font-bold text-gray-900 mb-6">
+						Frequently Asked Questions
+					</h2>
+					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+						<div>
+							<h3 className="font-semibold text-gray-900 mb-2">
+								How can I track my order?
+							</h3>
+							<p className="text-gray-600 text-sm">
+								Once your order ships, you'll receive a tracking number via
+								email. You can also track your order in your account dashboard.
+							</p>
+						</div>
+						<div>
+							<h3 className="font-semibold text-gray-900 mb-2">
+								What is your return policy?
+							</h3>
+							<p className="text-gray-600 text-sm">
+								We offer a 30-day return policy for most items. Items must be in
+								original condition with tags attached.
+							</p>
+						</div>
+						<div>
+							<h3 className="font-semibold text-gray-900 mb-2">
+								Do you offer international shipping?
+							</h3>
+							<p className="text-gray-600 text-sm">
+								Currently, we ship within the United States and Canada.
+								International shipping is coming soon!
+							</p>
 						</div>
 					</div>
 				</div>

@@ -57,7 +57,7 @@ export function ProductCard({ product }: ProductCardProps) {
 							</Badge>
 						</div>
 					)}
-					<button className="absolute top-2 right-2 p-2 bg-white rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:bg-gray-50">
+					<button className="absolute top-2 right-2 p-2 bg-white rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:bg-gray-50 touch-manipulation">
 						<Heart className="h-4 w-4 text-gray-600" />
 					</button>
 				</div>
@@ -100,7 +100,7 @@ export function ProductCard({ product }: ProductCardProps) {
 						<Button
 							onClick={handleAddToCart}
 							disabled={!product.inStock}
-							className="flex-1"
+							className="flex-1 touch-manipulation"
 							size="sm"
 						>
 							{product.inStock ? (

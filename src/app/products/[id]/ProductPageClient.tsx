@@ -79,7 +79,7 @@ export function ProductPageClient({ product }: ProductPageClientProps) {
 					<span className="text-gray-900">{product.name}</span>
 				</nav>
 
-				<div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+				<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
 					{/* Product Images */}
 					<div className="space-y-4">
 						<div className="aspect-square relative overflow-hidden rounded-lg bg-gray-100">
@@ -128,7 +128,7 @@ export function ProductPageClient({ product }: ProductPageClientProps) {
 						</div>
 
 						{product.images && product.images.length > 1 && (
-							<div className="grid grid-cols-4 gap-2">
+							<div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
 								{product.images.map((image, index) => (
 									<button
 										key={index}
@@ -136,7 +136,7 @@ export function ProductPageClient({ product }: ProductPageClientProps) {
 											console.log('Selecting image', index, 'URL:', image);
 											setSelectedImage(index);
 										}}
-										className={`aspect-square relative overflow-hidden rounded-md border-2 transition-colors ${
+										className={`aspect-square relative overflow-hidden rounded-md border-2 transition-colors touch-manipulation ${
 											selectedImage === index
 												? 'border-blue-500'
 												: 'border-gray-200 hover:border-gray-300'
@@ -264,12 +264,12 @@ export function ProductPageClient({ product }: ProductPageClientProps) {
 											console.log('Decreasing quantity from', quantity);
 											setQuantity(Math.max(1, quantity - 1));
 										}}
-										className="px-3 py-2 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+										className="px-4 py-3 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed touch-manipulation text-lg font-semibold"
 										disabled={quantity <= 1}
 									>
 										-
 									</button>
-									<span className="px-4 py-2 border-x border-gray-300 min-w-[3rem] text-center">
+									<span className="px-4 py-3 border-x border-gray-300 min-w-[3rem] text-center text-lg font-medium">
 										{quantity}
 									</span>
 									<button
@@ -277,19 +277,19 @@ export function ProductPageClient({ product }: ProductPageClientProps) {
 											console.log('Increasing quantity from', quantity);
 											setQuantity(quantity + 1);
 										}}
-										className="px-3 py-2 hover:bg-gray-50"
+										className="px-4 py-3 hover:bg-gray-50 touch-manipulation text-lg font-semibold"
 									>
 										+
 									</button>
 								</div>
 							</div>
 
-							<div className="flex gap-4">
+							<div className="flex flex-col sm:flex-row gap-4">
 								<Button
 									onClick={handleAddToCart}
 									disabled={!product.inStock}
 									size="lg"
-									className="flex-1"
+									className="flex-1 touch-manipulation"
 								>
 									{product.inStock ? (
 										<>
@@ -308,6 +308,7 @@ export function ProductPageClient({ product }: ProductPageClientProps) {
 									size="lg"
 									onClick={handleWishlist}
 									title="Add to Wishlist"
+									className="touch-manipulation"
 								>
 									<Heart className="h-5 w-5" />
 								</Button>
@@ -316,6 +317,7 @@ export function ProductPageClient({ product }: ProductPageClientProps) {
 									size="lg"
 									onClick={handleShare}
 									title="Share Product"
+									className="touch-manipulation"
 								>
 									<Share2 className="h-5 w-5" />
 								</Button>

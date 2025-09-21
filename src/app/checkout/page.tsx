@@ -165,7 +165,7 @@ export default function CheckoutPage() {
 									onChange={handleInputChange}
 									required
 								/>
-								<div className="grid grid-cols-2 gap-4">
+								<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 									<Input
 										label="First Name"
 										name="firstName"
@@ -205,7 +205,7 @@ export default function CheckoutPage() {
 									onChange={handleInputChange}
 									required
 								/>
-								<div className="grid grid-cols-2 gap-4">
+								<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 									<Input
 										label="City"
 										name="city"
@@ -221,7 +221,7 @@ export default function CheckoutPage() {
 										required
 									/>
 								</div>
-								<div className="grid grid-cols-2 gap-4">
+								<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 									<Input
 										label="ZIP Code"
 										name="zipCode"
@@ -263,7 +263,7 @@ export default function CheckoutPage() {
 									placeholder="1234 5678 9012 3456"
 									required
 								/>
-								<div className="grid grid-cols-2 gap-4">
+								<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 									<Input
 										label="Expiry Date"
 										name="expiryDate"

@@ -185,17 +185,17 @@ export default function AboutPage() {
 								ability to build complete, functional applications from frontend
 								to deployment.
 							</p>
-							<div className="mt-6 flex justify-center space-x-4">
-								<span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">
+							<div className="mt-6 flex flex-wrap justify-center gap-3 sm:grid sm:grid-cols-2 sm:gap-3 sm:max-w-xs sm:mx-auto">
+								<span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm sm:text-center">
 									React
 								</span>
-								<span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">
+								<span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm sm:text-center">
 									TypeScript
 								</span>
-								<span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">
+								<span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm sm:text-center">
 									Next.js
 								</span>
-								<span className="px-3 py-1 bg-cyan-100 text-cyan-800 rounded-full text-sm">
+								<span className="px-3 py-1 bg-cyan-100 text-cyan-800 rounded-full text-sm sm:text-center">
 									Tailwind
 								</span>
 							</div>
