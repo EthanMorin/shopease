@@ -1,15 +1,13 @@
-'use client';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import { ProductCard } from '../components/product/ProductCard';
+import { searchProducts } from '../data/products';
+import { Search as SearchIcon, X } from 'lucide-react';
+import { Button } from '../components/ui/Button';
+import { Link } from 'react-router-dom';
 
-import { useState, useEffect, Suspense } from 'react';
-import { useSearchParams } from 'next/navigation';
-import { ProductCard } from '@/components/product/ProductCard';
-import { searchProducts } from '@/data/products';
-import { Search, X } from 'lucide-react';
-import { Button } from '@/components/ui/Button';
-import Link from 'next/link';
-
-function SearchContent() {
-	const searchParams = useSearchParams();
+export default function Search() {
+	const [searchParams, setSearchParams] = useSearchParams();
 	const [query, setQuery] = useState('');
 	const [results, setResults] = useState(searchProducts(''));
 
@@ -22,6 +20,7 @@ function SearchContent() {
 	const handleSearch = (e: React.FormEvent) => {
 		e.preventDefault();
 		if (query.trim()) {
+			setSearchParams({ q: query.trim() });
 			setResults(searchProducts(query.trim()));
 		}
 	};
@@ -37,7 +36,7 @@ function SearchContent() {
 
 					<form onSubmit={handleSearch} className="max-w-2xl">
 						<div className="relative">
-							<Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+							<SearchIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
 							<input
 								type="text"
 								placeholder="Search products..."
@@ -50,6 +49,7 @@ function SearchContent() {
 									type="button"
 									onClick={() => {
 										setQuery('');
+										setSearchParams({});
 										setResults(searchProducts(''));
 									}}
 									className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
@@ -72,7 +72,7 @@ function SearchContent() {
 				) : (
 					<div className="text-center py-12">
 						<div className="text-gray-400 mb-4">
-							<Search className="h-16 w-16 mx-auto" />
+							<SearchIcon className="h-16 w-16 mx-auto" />
 						</div>
 						<h3 className="text-lg font-medium text-gray-900 mb-2">
 							Start your search
@@ -81,7 +81,7 @@ function SearchContent() {
 							Enter a product name or keyword to find what you&apos;re looking
 							for
 						</p>
-						<Link href="/products">
+						<Link to="/products">
 							<Button>Browse All Products</Button>
 						</Link>
 					</div>
@@ -97,7 +97,7 @@ function SearchContent() {
 				) : query ? (
 					<div className="text-center py-12">
 						<div className="text-gray-400 mb-4">
-							<Search className="h-16 w-16 mx-auto" />
+							<SearchIcon className="h-16 w-16 mx-auto" />
 						</div>
 						<h3 className="text-lg font-medium text-gray-900 mb-2">
 							No products found
@@ -109,12 +109,13 @@ function SearchContent() {
 							<Button
 								onClick={() => {
 									setQuery('');
+									setSearchParams({});
 									setResults(searchProducts(''));
 								}}
 							>
 								Clear Search
 							</Button>
-							<Link href="/products">
+							<Link to="/products">
 								<Button variant="outline">Browse All Products</Button>
 							</Link>
 						</div>
@@ -122,38 +123,5 @@ function SearchContent() {
 				) : null}
 			</div>
 		</div>
-	);
-}
-
-function SearchLoading() {
-	return (
-		<div className="min-h-screen bg-gray-50">
-			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-				<div className="mb-8">
-					<h1 className="text-3xl font-bold text-gray-900 mb-4">
-						Search Results
-					</h1>
-					<div className="max-w-2xl">
-						<div className="w-full h-12 bg-gray-200 rounded-md animate-pulse"></div>
-					</div>
-				</div>
-				<div className="text-center py-12">
-					<div className="text-gray-400 mb-4">
-						<Search className="h-16 w-16 mx-auto" />
-					</div>
-					<h3 className="text-lg font-medium text-gray-900 mb-2">
-						Loading search...
-					</h3>
-				</div>
-			</div>
-		</div>
-	);
-}
-
-export default function SearchPage() {
-	return (
-		<Suspense fallback={<SearchLoading />}>
-			<SearchContent />
-		</Suspense>
 	);
 }

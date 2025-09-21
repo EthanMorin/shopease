@@ -1,14 +1,14 @@
 name = "portfolio-ecom"
 compatibility_date = "2024-01-01"
 
-# Build configuration for static export
+# Build configuration for Vite static build
 [build]
 command = "npm run build"
 cwd = "."
 
-[build.output_dir] = "out"
+[build.output_dir] = "dist"
 
-# Output directory for static export
+# Output directory for Vite build
 # Static site configuration
 [pages]
 # No compatibility flags needed for static sites

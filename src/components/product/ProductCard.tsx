@@ -1,14 +1,11 @@
-'use client';
-
 import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 import { Star, ShoppingCart, Heart } from 'lucide-react';
-import { Product } from '@/types';
-import { formatPrice } from '@/lib/utils';
-import { Button } from '@/components/ui/Button';
-import { Badge } from '@/components/ui/Badge';
-import { useCart } from '@/context/CartContext';
+import { Product } from '../../types';
+import { formatPrice } from '../../lib/utils';
+import { Button } from '../ui/Button';
+import { Badge } from '../ui/Badge';
+import { useCart } from '../../context/CartContext';
 
 interface ProductCardProps {
 	product: Product;
@@ -25,13 +22,12 @@ export function ProductCard({ product }: ProductCardProps) {
 
 	return (
 		<div className="group relative bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow duration-200">
-			<Link href={`/products/${product.id}`} className="block">
+			<Link to={`/products/${product.id}`} className="block">
 				<div className="aspect-square relative overflow-hidden bg-gray-100">
-					<Image
+					<img
 						src={product.image}
 						alt={product.name}
-						fill
-						className="object-cover group-hover:scale-105 transition-transform duration-200"
+						className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
 					/>
 					{!product.inStock && (
 						<>

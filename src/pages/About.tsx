@@ -8,7 +8,7 @@ import {
 	User,
 } from 'lucide-react';
 
-export default function AboutPage() {
+export default function About() {
 	return (
 		<div className="min-h-screen bg-gray-50">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -23,9 +23,9 @@ export default function AboutPage() {
 						</p>
 						<p className="text-gray-700 max-w-3xl mx-auto">
 							This is a portfolio project showcasing modern full-stack web
-							development skills. Built with Next.js 15, TypeScript, and
-							Tailwind CSS, it demonstrates e-commerce functionality including
-							product catalogs, shopping carts, and responsive design.
+							development skills. Built with React, TypeScript, and Tailwind
+							CSS, it demonstrates e-commerce functionality including product
+							catalogs, shopping carts, and responsive design.
 						</p>
 						<div className="mt-4 p-4 bg-yellow-100 border border-yellow-300 rounded-lg">
 							<p className="text-yellow-800 font-semibold">
@@ -45,7 +45,7 @@ export default function AboutPage() {
 						<p className="text-gray-600 leading-relaxed">
 							I wanted to build something that shows off my web dev skills while
 							being actually useful. This project lets me practice with modern
-							tools like React, Next.js, and TypeScript in a real-world context.
+							tools like React, TypeScript, and Vite in a real-world context.
 						</p>
 					</div>
 					<div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
@@ -53,9 +53,9 @@ export default function AboutPage() {
 							Technologies Used
 						</h2>
 						<p className="text-gray-600 leading-relaxed">
-							I used Next.js 15 with TypeScript for the framework, Tailwind for
-							styling, and deployed it on Cloudflare Pages. The site is fully
-							responsive and uses static generation for better performance.
+							I used React with TypeScript for the framework, Tailwind for
+							styling, and Vite for the build tool. The site is fully responsive
+							and uses static generation for better performance.
 						</p>
 					</div>
 				</div>
@@ -193,7 +193,7 @@ export default function AboutPage() {
 									TypeScript
 								</span>
 								<span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm sm:text-center">
-									Next.js
+									Vite
 								</span>
 								<span className="px-3 py-1 bg-cyan-100 text-cyan-800 rounded-full text-sm sm:text-center">
 									Tailwind

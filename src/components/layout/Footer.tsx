@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 import {
 	Facebook,
 	Twitter,
@@ -32,19 +32,19 @@ export function Footer() {
 						</p>
 						<div className="flex space-x-4">
 							<a
-								href="#"
+								to="#"
 								className="text-gray-300 hover:text-white transition-colors"
 							>
 								<Facebook className="h-5 w-5" />
 							</a>
 							<a
-								href="#"
+								to="#"
 								className="text-gray-300 hover:text-white transition-colors"
 							>
 								<Twitter className="h-5 w-5" />
 							</a>
 							<a
-								href="#"
+								to="#"
 								className="text-gray-300 hover:text-white transition-colors"
 							>
 								<Instagram className="h-5 w-5" />
@@ -58,7 +58,7 @@ export function Footer() {
 						<ul className="space-y-2">
 							<li>
 								<Link
-									href="/products"
+									to="/products"
 									className="text-gray-300 hover:text-white transition-colors"
 								>
 									All Products
@@ -66,7 +66,7 @@ export function Footer() {
 							</li>
 							<li>
 								<Link
-									href="/products?category=Electronics"
+									to="/products?category=Electronics"
 									className="text-gray-300 hover:text-white transition-colors"
 								>
 									Electronics
@@ -74,7 +74,7 @@ export function Footer() {
 							</li>
 							<li>
 								<Link
-									href="/products?category=Clothing"
+									to="/products?category=Clothing"
 									className="text-gray-300 hover:text-white transition-colors"
 								>
 									Clothing
@@ -82,7 +82,7 @@ export function Footer() {
 							</li>
 							<li>
 								<Link
-									href="/products?category=Accessories"
+									to="/products?category=Accessories"
 									className="text-gray-300 hover:text-white transition-colors"
 								>
 									Accessories
@@ -90,7 +90,7 @@ export function Footer() {
 							</li>
 							<li>
 								<Link
-									href="/about"
+									to="/about"
 									className="text-gray-300 hover:text-white transition-colors"
 								>
 									About Us
@@ -105,7 +105,7 @@ export function Footer() {
 						<ul className="space-y-2">
 							<li>
 								<Link
-									href="/contact"
+									to="/contact"
 									className="text-gray-300 hover:text-white transition-colors"
 								>
 									Contact Us
@@ -113,7 +113,7 @@ export function Footer() {
 							</li>
 							<li>
 								<Link
-									href="/shipping"
+									to="/shipping"
 									className="text-gray-300 hover:text-white transition-colors"
 								>
 									Shipping Info
@@ -121,7 +121,7 @@ export function Footer() {
 							</li>
 							<li>
 								<Link
-									href="/returns"
+									to="/returns"
 									className="text-gray-300 hover:text-white transition-colors"
 								>
 									Returns & Exchanges
@@ -129,7 +129,7 @@ export function Footer() {
 							</li>
 							<li>
 								<Link
-									href="/faq"
+									to="/faq"
 									className="text-gray-300 hover:text-white transition-colors"
 								>
 									FAQ
@@ -137,7 +137,7 @@ export function Footer() {
 							</li>
 							<li>
 								<Link
-									href="/privacy"
+									to="/privacy"
 									className="text-gray-300 hover:text-white transition-colors"
 								>
 									Privacy Policy

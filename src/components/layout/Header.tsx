@@ -1,25 +1,22 @@
-'use client';
-
 import React, { useState } from 'react';
-import Link from 'next/link';
-import { useRouter, usePathname } from 'next/navigation';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Search, ShoppingCart, Menu, X } from 'lucide-react';
-import { useCart } from '@/context/CartContext';
-import { Input } from '@/components/ui/Input';
-import { cn } from '@/lib/utils';
+import { useCart } from '../../context/CartContext';
+import { Input } from '../ui/Input';
+import { cn } from '../../lib/utils';
 
 export function Header() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [isSearchOpen, setIsSearchOpen] = useState(false);
 	const [searchQuery, setSearchQuery] = useState('');
 	const { getTotalItems } = useCart();
-	const router = useRouter();
-	const pathname = usePathname();
+	const navigate = useNavigate();
+	const location = useLocation();
 
 	const handleSearch = (e: React.FormEvent) => {
 		e.preventDefault();
 		if (searchQuery.trim()) {
-			router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
+			navigate(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
 			setSearchQuery('');
 			setIsSearchOpen(false);
 		}
@@ -30,9 +27,9 @@ export function Header() {
 	// Helper function to check if a link is active
 	const isActive = (path: string) => {
 		if (path === '/') {
-			return pathname === '/';
+			return location.pathname === '/';
 		}
-		return pathname.startsWith(path);
+		return location.pathname.startsWith(path);
 	};
 
 	return (
@@ -41,7 +38,7 @@ export function Header() {
 				{/* Main header row */}
 				<div className="flex items-center justify-between h-16">
 					{/* Logo - Mobile optimized */}
-					<Link href="/" className="flex items-center flex-shrink-0">
+					<Link to="/" className="flex items-center flex-shrink-0">
 						<div className="text-xl sm:text-2xl font-bold text-blue-600">
 							ShopEase
 							<span className="text-xs text-gray-500 ml-1 sm:ml-2 font-normal hidden sm:inline">
@@ -69,7 +66,7 @@ export function Header() {
 					{/* Desktop Navigation - Hidden on mobile */}
 					<nav className="hidden lg:flex items-center space-x-8">
 						<Link
-							href="/"
+							to="/"
 							className={cn(
 								'transition-colors text-sm font-medium',
 								isActive('/')
@@ -80,7 +77,7 @@ export function Header() {
 							Home
 						</Link>
 						<Link
-							href="/products"
+							to="/products"
 							className={cn(
 								'transition-colors text-sm font-medium',
 								isActive('/products')
@@ -91,7 +88,7 @@ export function Header() {
 							Products
 						</Link>
 						<Link
-							href="/about"
+							to="/about"
 							className={cn(
 								'transition-colors text-sm font-medium',
 								isActive('/about')
@@ -102,7 +99,7 @@ export function Header() {
 							About
 						</Link>
 						<Link
-							href="/contact"
+							to="/contact"
 							className={cn(
 								'transition-colors text-sm font-medium',
 								isActive('/contact')
@@ -126,7 +123,7 @@ export function Header() {
 
 						{/* Shopping Cart */}
 						<Link
-							href="/cart"
+							to="/cart"
 							className="relative p-3 text-gray-600 hover:text-blue-600 hover:bg-gray-100 rounded-md transition-colors"
 						>
 							<ShoppingCart className="h-5 w-5" />
@@ -182,7 +179,7 @@ export function Header() {
 							{/* Mobile Navigation Links */}
 							<nav className="space-y-1 mb-6">
 								<Link
-									href="/"
+									to="/"
 									className={cn(
 										'flex items-center px-4 py-4 rounded-lg text-lg font-medium transition-colors',
 										isActive('/')
@@ -194,7 +191,7 @@ export function Header() {
 									Home
 								</Link>
 								<Link
-									href="/products"
+									to="/products"
 									className={cn(
 										'flex items-center px-4 py-4 rounded-lg text-lg font-medium transition-colors',
 										isActive('/products')
@@ -206,7 +203,7 @@ export function Header() {
 									Products
 								</Link>
 								<Link
-									href="/about"
+									to="/about"
 									className={cn(
 										'flex items-center px-4 py-4 rounded-lg text-lg font-medium transition-colors',
 										isActive('/about')
@@ -218,7 +215,7 @@ export function Header() {
 									About
 								</Link>
 								<Link
-									href="/contact"
+									to="/contact"
 									className={cn(
 										'flex items-center px-4 py-4 rounded-lg text-lg font-medium transition-colors',
 										isActive('/contact')
@@ -235,7 +232,7 @@ export function Header() {
 							<div className="border-t border-gray-200 pt-4">
 								<div className="space-y-2">
 									<Link
-										href="/cart"
+										to="/cart"
 										className="flex items-center w-full px-4 py-4 text-left text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg transition-colors"
 										onClick={() => setIsMenuOpen(false)}
 									>

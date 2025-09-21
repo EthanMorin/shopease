@@ -1,8 +1,8 @@
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 import { ArrowRight, Star, Truck, Shield, RotateCcw } from 'lucide-react';
-import { ProductCard } from '@/components/product/ProductCard';
-import { Button } from '@/components/ui/Button';
-import { products } from '@/data/products';
+import { ProductCard } from '../components/product/ProductCard';
+import { Button } from '../components/ui/Button';
+import { products } from '../data/products';
 
 export default function Home() {
 	const featuredProducts = products.slice(0, 4);
@@ -20,7 +20,7 @@ export default function Home() {
 							Portfolio E-commerce Demo
 						</p>
 						<p className="text-base sm:text-lg mb-6 sm:mb-8 text-blue-200 px-4">
-							Showcasing modern web development with Next.js, TypeScript &
+							Showcasing modern web development with React, TypeScript &
 							Tailwind CSS
 						</p>
 						<div className="bg-yellow-400/20 border border-yellow-400/30 rounded-lg p-3 sm:p-4 mb-6 sm:mb-8 max-w-2xl mx-auto mx-4">
@@ -30,7 +30,7 @@ export default function Home() {
 							</p>
 						</div>
 						<div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
-							<Link href="/products" className="w-full sm:w-auto">
+							<Link to="/products" className="w-full sm:w-auto">
 								<Button
 									size="lg"
 									className="w-full sm:w-auto bg-white text-blue-600 hover:bg-gray-100"
@@ -39,7 +39,7 @@ export default function Home() {
 									<ArrowRight className="ml-2 h-5 w-5" />
 								</Button>
 							</Link>
-							<Link href="/about" className="w-full sm:w-auto">
+							<Link to="/about" className="w-full sm:w-auto">
 								<Button
 									size="lg"
 									variant="outline"
@@ -124,7 +124,7 @@ export default function Home() {
 					</div>
 
 					<div className="text-center mt-8 sm:mt-12">
-						<Link href="/products">
+						<Link to="/products">
 							<Button size="lg" className="w-full sm:w-auto">
 								View All Products
 								<ArrowRight className="ml-2 h-5 w-5" />
