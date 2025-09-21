@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { getProductById } from '../data/products';
 import { ProductPageClient } from '../components/product/ProductPageClient';

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import {
 	Facebook,
@@ -32,19 +31,16 @@ export function Footer() {
 						</p>
 						<div className="flex space-x-4">
 							<a
-								to="#"
 								className="text-gray-300 hover:text-white transition-colors"
 							>
 								<Facebook className="h-5 w-5" />
 							</a>
 							<a
-								to="#"
 								className="text-gray-300 hover:text-white transition-colors"
 							>
 								<Twitter className="h-5 w-5" />
 							</a>
 							<a
-								to="#"
 								className="text-gray-300 hover:text-white transition-colors"
 							>
 								<Instagram className="h-5 w-5" />
@@ -152,18 +148,16 @@ export function Footer() {
 						<div className="space-y-3">
 							<div className="flex items-center">
 								<Mail className="h-4 w-4 mr-3 text-gray-300" />
-								<span className="text-gray-300">support@shopease.com</span>
+								<span className="text-gray-300">ethanmorin2004@gmail.com</span>
 							</div>
 							<div className="flex items-center">
 								<Phone className="h-4 w-4 mr-3 text-gray-300" />
-								<span className="text-gray-300">+1 (555) 123-4567</span>
+								<span className="text-gray-300">+1 (801) 651-5559</span>
 							</div>
 							<div className="flex items-start">
 								<MapPin className="h-4 w-4 mr-3 mt-1 text-gray-300" />
 								<span className="text-gray-300">
-									123 Commerce Street
-									<br />
-									New York, NY 10001
+									Herriman, UT
 								</span>
 							</div>
 						</div>
