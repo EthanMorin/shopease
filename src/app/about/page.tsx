@@ -74,7 +74,7 @@ export default function AboutPage() {
 								Clean Code
 							</h3>
 							<p className="text-gray-600">
-								I try to write code that's easy to read and maintain. Good
+								I try to write code that&apos;s easy to read and maintain. Good
 								practices make everything easier to work with.
 							</p>
 						</div>
@@ -88,7 +88,7 @@ export default function AboutPage() {
 							<p className="text-gray-600">
 								I care about how things work and feel. Good UX makes the
 								difference between something people use and something they
-								don't.
+								don&apos;t.
 							</p>
 						</div>
 						<div className="text-center">
@@ -99,8 +99,8 @@ export default function AboutPage() {
 								Learning & Growth
 							</h3>
 							<p className="text-gray-600">
-								I'm always trying to learn new things and improve my skills.
-								This project is part of that journey.
+								I&apos;m always trying to learn new things and improve my
+								skills. This project is part of that journey.
 							</p>
 						</div>
 						<div className="text-center">

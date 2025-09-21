@@ -25,7 +25,7 @@ export default function ProductPage({ params }: ProductPageProps) {
 						Product Not Found
 					</h1>
 					<p className="text-gray-600 mb-6">
-						The product you're looking for doesn't exist.
+						The product you&apos;re looking for doesn&apos;t exist.
 					</p>
 				</div>
 			</div>

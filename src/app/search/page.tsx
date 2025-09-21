@@ -66,7 +66,7 @@ export default function SearchPage() {
 					<div className="mb-6">
 						<p className="text-gray-600">
 							{results.length} result{results.length !== 1 ? 's' : ''} found for
-							"{query}"
+							&ldquo;{query}&rdquo;
 						</p>
 					</div>
 				) : (
@@ -78,7 +78,8 @@ export default function SearchPage() {
 							Start your search
 						</h3>
 						<p className="text-gray-600 mb-6">
-							Enter a product name or keyword to find what you're looking for
+							Enter a product name or keyword to find what you&apos;re looking
+							for
 						</p>
 						<Link href="/products">
 							<Button>Browse All Products</Button>

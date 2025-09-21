@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import {
@@ -11,7 +10,6 @@ import {
 	Truck,
 	Shield,
 	RotateCcw,
-	ArrowLeft,
 	ShoppingCart,
 } from 'lucide-react';
 import { ProductCard } from '@/components/product/ProductCard';
@@ -27,7 +25,6 @@ interface ProductPageClientProps {
 }
 
 export function ProductPageClient({ product }: ProductPageClientProps) {
-	const router = useRouter();
 	const { addToCart } = useCart();
 	const [selectedImage, setSelectedImage] = useState(0);
 	const [quantity, setQuantity] = useState(1);
@@ -88,7 +85,7 @@ export function ProductPageClient({ product }: ProductPageClientProps) {
 								alt={product.name}
 								fill
 								className="object-cover"
-								onError={(e) => {
+								onError={() => {
 									console.error(
 										'Image failed to load:',
 										product.images?.[selectedImage] || product.image
@@ -147,7 +144,7 @@ export function ProductPageClient({ product }: ProductPageClientProps) {
 											alt={`${product.name} view ${index + 1}`}
 											fill
 											className="object-cover"
-											onError={(e) => {
+											onError={() => {
 												console.error(
 													`Thumbnail image ${index} failed to load:`,
 													image

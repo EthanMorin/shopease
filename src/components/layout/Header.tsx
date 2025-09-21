@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
 import { Search, ShoppingCart, Menu, X } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
-import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { cn } from '@/lib/utils';
 
