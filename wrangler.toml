@@ -1,10 +1,14 @@
 name = "portfolio-ecom"
 compatibility_date = "2024-01-01"
-compatibility_flags = ["nodejs_compat"]
 
+# Build configuration for static export
 [build]
-command = "npx @cloudflare/next-on-pages@1"
+command = "npm run build"
 cwd = "."
 
-[env.production]
-compatibility_flags = ["nodejs_compat"]
+[build.output_dir] = "out"
+
+# Output directory for static export
+# Static site configuration
+[pages]
+# No compatibility flags needed for static sites
