@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { ProductCard } from '@/components/product/ProductCard';
 import { searchProducts } from '@/data/products';
@@ -8,7 +8,7 @@ import { Search, X } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import Link from 'next/link';
 
-export default function SearchPage() {
+function SearchContent() {
 	const searchParams = useSearchParams();
 	const [query, setQuery] = useState('');
 	const [results, setResults] = useState(searchProducts(''));
@@ -122,5 +122,38 @@ export default function SearchPage() {
 				) : null}
 			</div>
 		</div>
+	);
+}
+
+function SearchLoading() {
+	return (
+		<div className="min-h-screen bg-gray-50">
+			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+				<div className="mb-8">
+					<h1 className="text-3xl font-bold text-gray-900 mb-4">
+						Search Results
+					</h1>
+					<div className="max-w-2xl">
+						<div className="w-full h-12 bg-gray-200 rounded-md animate-pulse"></div>
+					</div>
+				</div>
+				<div className="text-center py-12">
+					<div className="text-gray-400 mb-4">
+						<Search className="h-16 w-16 mx-auto" />
+					</div>
+					<h3 className="text-lg font-medium text-gray-900 mb-2">
+						Loading search...
+					</h3>
+				</div>
+			</div>
+		</div>
+	);
+}
+
+export default function SearchPage() {
+	return (
+		<Suspense fallback={<SearchLoading />}>
+			<SearchContent />
+		</Suspense>
 	);
 }
